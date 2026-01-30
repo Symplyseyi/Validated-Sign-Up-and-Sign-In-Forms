@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SignUp Form</title>
+    <link rel="stylesheet" href="./style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="mainContainer">
+      <form id="form" class="form" novalidate>
+        <h1>Create Account</h1>
+        <p class="sub-heading">
+          Fill in the details below to create your account
+        </p>
+
+        <div class="input-field">
+          <label for="fullname">Full Name</label>
+          <input
+            type="text"
+            name="fullname"
+            id="fullname"
+            placeholder="John Doe"
+            autofocus
+          />
+          <p class="error" id="fullnameError"></p>
+        </div>
+
+        <div class="input-field">
+          <label for="email">Email</label>
+          <input
+            type="email"
+            name="email"
+            id="email"
+            placeholder="e.g. johndoe@yahoo.com"
+          />
+          <p class="error" id="emailError"></p>
+        </div>
+
+        <div class="input-field">
+          <label for="password">Password</label>
+          <div class="password-wrapper">
+            <input
+              type="password"
+              name="password"
+              id="password"
+              placeholder="Create a password"
+            />
+            <span class="material-symbols-outlined" id="toggle-password">
+              visibility
+            </span>
+          </div>
+          <p class="error" id="passwordError"></p>
+        </div>
+
+        <div class="requirements">
+          <p class="req" id="r1">At least 8 characters</p>
+          <p class="req" id="r2">At least 1 uppercase letter</p>
+          <p class="req" id="r3">At least 1 lowercase letter</p>
+          <p class="req" id="r4">At least 1 number</p>
+          <p class="req" id="r5">At least 1 Special character required</p>
+        </div>
+
+        <div class="input-field">
+          <label for="confirmPassword">Confirm Password</label>
+          <div class="confirm-password-wrapper">
+            <input
+              type="password"
+              name="confirmPassword"
+              id="confirmPassword"
+              placeholder="Confirm password"
+            />
+            <span
+              class="material-symbols-outlined"
+              id="toggle-confirm-password"
+            >
+              visibility
+            </span>
+          </div>
+          <p class="error" id="confirmPasswordError"></p>
+        </div>
+
+        <button type="submit" class="btn" id="button" disabled>
+          Create Account
+        </button>
+
+        <div class="signInGroup">
+          <p class="signInText">Already have an account?</p>
+          <a href="./signin.html">Sign in</a>
+        </div>
+
+        <p class="formMsg" id="formMsg"></p>
+      </form>
+    </div>
+    <script src="./script.js"></script>
+  </body>
+</html>

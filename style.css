@@ -1,0 +1,173 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "lato", sans-serif;
+}
+
+.mainContainer {
+  width: 100%;
+  height: auto;
+  min-height: 100vh;
+  background: #0b1220;
+  color: #eaf0ff;
+  display: grid;
+  place-items: center;
+  padding: 1rem 0;
+}
+
+.form {
+  width: min(420px, 100%);
+  height: auto;
+  background: #111a2e;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 20px;
+}
+
+h1 {
+  margin: 0 0 6px;
+  font-size: 20px;
+}
+
+.sub-heading {
+  font-size: 14px;
+  padding: 0 0 1.2rem;
+  opacity: 0.8;
+}
+
+.input-group {
+  margin-bottom: 14px;
+}
+
+label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 14px;
+}
+
+input {
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: #0c1428;
+  color: #eaf0ff;
+  outline: none;
+}
+
+input.valid {
+  border-color: #65b965;
+}
+
+input.invalid {
+  border-color: #df3232;
+}
+
+.error {
+  font-size: 12px;
+  margin: 8px 0 0;
+  min-height: 18px;
+  color: #e04b4b;
+}
+
+.formMsg {
+  font-size: 12px;
+  margin: 8px 0 0;
+  min-height: 18px;
+  color: #65b965;
+}
+
+.requirements {
+  background-color: #182135;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 10px;
+  padding: 10px 12px;
+  margin-bottom: 24px;
+}
+
+.req {
+  font-size: 12px;
+  margin: 6px 0;
+  opacity: 0.8;
+}
+
+.req.ok {
+  color: #91e491;
+  opacity: 1;
+}
+
+.password-wrapper,
+.confirm-password-wrapper {
+  position: relative;
+}
+
+span {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  user-select: none;
+  opacity: 0.7;
+  font-size: 24px;
+}
+
+span:hover {
+  opacity: 1;
+}
+
+.btn {
+  width: 100%;
+  border: none;
+  border-radius: 10px;
+  padding: 12px;
+  background: #2d6bff;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.signInGroup,
+.signUpGroup {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem 0 0.5rem;
+  column-gap: 8px;
+}
+
+.signInText,
+.signUpText {
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+.signInGroup a,
+.signUpGroup a {
+  color: #eaf0ff;
+  text-decoration: none;
+  font-size: 14px;
+  opacity: 0.8;
+  transition: color 0.3s ease;
+}
+
+.signInGroup a:hover,
+.signUpGroup a:hover {
+  color: #2d6bff;
+}
+
+.formMsg {
+  margin-top: 10px;
+  min-height: 18px;
+  font-size: 12px;
+  opacity: 0.85;
+}
