@@ -218,6 +218,10 @@ span:hover {
   color: var(--validBdColor);
 }
 
+.formMsg.error {
+  color: var(--error);
+}
+
 @media screen and (max-width: 520px) {
   .mainContainer {
     width: 100%;

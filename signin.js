@@ -163,3 +163,51 @@ passwordInput.addEventListener("input", () => {
   validatePassword();
   canEnableButton();
 });
+
+// Form Collection and Stora
+const usersFormData = JSON.parse(localStorage.getItem("usersFormData")) || [];
+
+form.addEventListener("submit", handlingFormData);
+function handlingFormData(event) {
+  event.preventDefault();
+
+  let emailValue = emailInput.value.trim();
+  let passwordValue = passwordInput.value.trim();
+
+  let formData = {
+    email: emailValue,
+    password: passwordValue,
+  };
+
+  formMsg.textContent = "Account Login successfully";
+  formMsg.textContent.className = "success";
+
+  setTimeout(() => {
+    formMsg.textContent = "";
+    formMsg.className = "";
+  }, 3000);
+
+  usersFormData.push(formData);
+  localStorage.setItem("usersFormData", JSON.stringify(usersFormData));
+  form.reset();
+  resetFormUI();
+}
+
+function resetFormUI() {
+  // Remove input classes
+  emailInput.className = "";
+  passwordInput.className = "";
+
+  // Clear errors
+  emailError.textContent = "";
+
+  // Reset password requirement indicators
+  r1.className = "req";
+  r2.className = "req";
+  r3.className = "req";
+  r4.className = "req";
+  r5.className = "req";
+
+  // Disable button again
+  button.disabled = true;
+}
