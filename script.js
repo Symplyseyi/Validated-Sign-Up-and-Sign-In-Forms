@@ -279,3 +279,59 @@ confirmPasswordInput.addEventListener("input", () => {
   validateConfirmPassword();
   canEnableButton();
 });
+
+// Form Collection and Stora
+const usersFormData = JSON.parse(localStorage.getItem("usersFormData")) || [];
+
+form.addEventListener("submit", handlingFormData);
+function handlingFormData(event) {
+  event.preventDefault();
+
+  let fullnameValue = fullnameInput.value.trim();
+  let emailValue = emailInput.value.trim();
+  let passwordValue = passwordInput.value.trim();
+  let confirmPasswordValue = confirmPasswordInput.value.trim();
+
+  let formData = {
+    fullname: fullnameValue,
+    email: emailValue,
+    password: passwordValue,
+    confirmPassword: confirmPasswordValue,
+  };
+
+  formMsg.textContent = "Account created successfully";
+  formMsg.textContent.className = "success";
+
+  setTimeout(() => {
+    formMsg.textContent = "";
+    formMsg.className = "";
+  }, 3000);
+
+  usersFormData.push(formData);
+  localStorage.setItem("usersFormData", JSON.stringify(usersFormData));
+  form.reset();
+  resetFormUI();
+}
+
+function resetFormUI() {
+  // Remove input classes
+  fullnameInput.className = "";
+  emailInput.className = "";
+  passwordInput.className = "";
+  confirmPasswordInput.className = "";
+
+  // Clear errors
+  fullnameError.textContent = "";
+  emailError.textContent = "";
+  confirmPassworderror.textContent = "";
+
+  // Reset password requirement indicators
+  r1.className = "req";
+  r2.className = "req";
+  r3.className = "req";
+  r4.className = "req";
+  r5.className = "req";
+
+  // Disable button again
+  button.disabled = true;
+}
